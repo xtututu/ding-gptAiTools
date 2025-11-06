@@ -6,7 +6,7 @@ fieldDecoratorKit.setDomainList(['api.exchangerate-api.com','token.yishangcloud.
 
 fieldDecoratorKit.setDecorator({
    name: 'AI 对话(GPT)',
-  // 定义捷径的i18n语言资源
+  // 定义AI 字段的i18n语言资源
   i18nMap: {
     'zh-CN': {
         'modelSelection': '选择模型',
@@ -38,7 +38,7 @@ fieldDecoratorKit.setDecorator({
         dark: ''
       }
     },
-  // 定义捷径的入参
+  // 定义AI 字段的入参
   formItems: [
     {
       key: 'modelSelection',
@@ -87,7 +87,7 @@ fieldDecoratorKit.setDecorator({
       }
     }
   ],
-  // 定义捷径的返回结果类型
+  // 定义AI 字段的返回结果类型
  resultType: {
     type: FieldType.Object,
     extra: {
