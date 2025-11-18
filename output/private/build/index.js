@@ -21,7 +21,7 @@ var t = _dingtalkDocsCoolApp.fieldDecoratorKit.t;
 _dingtalkDocsCoolApp.fieldDecoratorKit.setDomainList(['api.exchangerate-api.com', 'token.yishangcloud.cn', 'open.feishu.cn', 'pay.xunkecloud.cn']);
 _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
   name: 'AI 对话(GPT)',
-  // 定义捷径的i18n语言资源
+  // 定义AI 字段的i18n语言资源
   i18nMap: {
     'zh-CN': {
       'modelSelection': '选择模型',
@@ -42,7 +42,7 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
   authorizations: {
     id: 'auth_id',
     // 授权的id，用于context.fetch第三个参数指定使用
-    platform: 'xunkecloud',
+    platform: 'yishangcloud',
     // 授权平台，目前可以填写当前平台名称
     type: _dingtalkDocsCoolApp.AuthorizationType.HeaderBearerToken,
     // 授权类型
@@ -60,15 +60,18 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
       dark: ''
     }
   },
-  // 定义捷径的入参
+  // 定义AI 字段的入参
   formItems: [{
     key: 'modelSelection',
     label: t('modelSelection'),
     component: _dingtalkDocsCoolApp.FormItemComponent.SingleSelect,
     props: {
-      defaultValue: 'gpt-5',
+      defaultValue: 'gpt-5.1',
       placeholder: '请选择模型',
       options: [{
+        key: 'gpt-5.1',
+        title: 'gpt-5.1'
+      }, {
         key: 'gpt-5',
         title: 'gpt-5'
       }, {
@@ -100,7 +103,7 @@ _dingtalkDocsCoolApp.fieldDecoratorKit.setDecorator({
       required: true
     }
   }],
-  // 定义捷径的返回结果类型
+  // 定义AI 字段的返回结果类型
   resultType: {
     type: _dingtalkDocsCoolApp.FieldType.Object,
     extra: {

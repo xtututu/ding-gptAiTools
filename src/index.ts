@@ -45,9 +45,13 @@ fieldDecoratorKit.setDecorator({
       label: t('modelSelection'),
       component: FormItemComponent.SingleSelect,
       props: {
-        defaultValue: 'gpt-5',
+        defaultValue: 'gpt-5.1',
         placeholder: '请选择模型',
         options: [
+          {
+            key: 'gpt-5.1',
+            title: 'gpt-5.1',
+          },
           {
             key: 'gpt-5',
             title: 'gpt-5',
