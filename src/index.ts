@@ -148,7 +148,16 @@ fieldDecoratorKit.setDecorator({
             const taskResp = await context.fetch(createVideoUrl, requestOptions, 'auth_id');
 
 
-          const initialResult = await taskResp.json();      
+          const initialResult = await taskResp.json();    
+          
+          // 检查令牌有效性
+      if (initialResult.error?.message?.includes('无效的令牌')) {
+        return {
+          code: FieldExecuteCode.Error,
+          errorMessage: 'error3'
+        };
+      }
+
            
           // 检查是否有错误
           if (initialResult.error) {
