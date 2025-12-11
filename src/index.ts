@@ -12,17 +12,27 @@ fieldDecoratorKit.setDecorator({
         'modelSelection': '选择模型',
         'inputCommand': '输入指令',
         'outputResult': '输出结果',
+        'errorTips1': '令牌配置有误，请检查您的令牌是否正确，如仍有疑问可加入钉钉群咨询',
+
       },
       'en-US': {
         'modelSelection': 'Model selection',
         'inputCommand': 'Input command',
         'outputResult': 'Output result',
+        'errorTips1': 'The token configuration is wrong. Please check whether your token is correct. If you still have any questions, you can join the Dingding group for consultation.',
       },
       'ja-JP': {
         'modelSelection': 'モデル選択',
         'inputCommand': '入力コマンド',
         'outputResult': '出力結果',
+        'errorTips1': 'トークンの設定が間違っています。トークンが正しいかどうかを確認してください。まだ疑問がある場合は、DingDingグループに参加して相談してください。',
+
       },
+  },
+   errorMessages: {
+    // 定义错误信息集合
+    'error1': t('errorTips1'),
+
   },
  authorizations: 
     {
@@ -154,7 +164,7 @@ fieldDecoratorKit.setDecorator({
       if (initialResult.error?.message?.includes('无效的令牌')) {
         return {
           code: FieldExecuteCode.Error,
-          errorMessage: 'error3'
+          errorMessage: 'error1'
         };
       }
 
